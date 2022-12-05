@@ -10,7 +10,7 @@ class Vendor extends Model
 {
     use Notifiable;
     protected $table ='vendors';
-    protected $fillable =['name','logo','mobile','address','email','active','password','category_id','created_at','updated_at'];
+    protected $fillable =['name','logo','mobile','address','email','active','latitude','longitude','password','category_id','created_at','updated_at'];
     protected $hidden = ['category_id','password'];
 
 

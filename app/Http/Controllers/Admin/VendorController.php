@@ -10,7 +10,7 @@ use App\Notifications\VendorCreated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Notification;
-use Illuminate\Support\Facades\Storage;
+    use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class VendorController extends Controller
@@ -18,6 +18,13 @@ class VendorController extends Controller
 
     public function GetVendors()
     {
+//        $a = 'Samuel' ;
+//        $b = "mena";
+//        [$a,$b] = [$b,$a];
+//
+//        echo $a .'<br>' ;
+//        echo $b;
+
         $vendors = Vendor::select()->paginate(PAGINATION_COUNT);
         return view('admin.vendors.index',compact('vendors'));
     }
@@ -44,14 +51,18 @@ class VendorController extends Controller
             }
 
             $vendor = Vendor::create([
-                'logo'          => $filePath ,
-                'name'          => $request-> name,
-                'category_id'   => $request-> category_id,
-                'mobile'        => $request-> mobile,
-                'email'         => $request-> email,
-                'password'      => $request-> password,
-                'active'        => $request-> active,
-                'address'       => $request-> address,
+                'logo'            => $filePath ,
+                'name'            => $request-> name,
+                'category_id'     => $request-> category_id,
+                'mobile'          => $request-> mobile ,
+                'email'           => $request-> email ,
+                'password'        => $request-> password ,
+                'active'          => $request-> active ,
+                'address'         => $request-> address ,
+                'latitude'        => $request-> latitude ,
+                'longitude'       => $request-> longitude ,
+
+
             ]);
 
             Notification::send($vendor,new VendorCreated($vendor));   // send(toUser ,Message )

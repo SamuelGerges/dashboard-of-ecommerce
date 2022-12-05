@@ -8,6 +8,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
+Route::namespace('Admin')->middleware('guest:admin')->group(function (){
+    Route::get('login','AuthController@GetLogin')->name('get.admin.login');
+    Route::post('admin_login','AuthController@Login')->name('admin.login');
+});
+
+
 Route::namespace('Admin')->middleware('auth:admin')->group(function () {
 
     Route::get('/','DashboardController@Index')->name('admin.dashboard');
@@ -51,8 +57,5 @@ Route::namespace('Admin')->middleware('auth:admin')->group(function () {
 
 
 
-Route::namespace('Admin')->middleware('guest:admin')->group(function (){
-    Route::get('login','AuthController@GetLogin')->name('get.admin.login');
-    Route::post('admin_login','AuthController@Login')->name('admin.login');
-});
+
 

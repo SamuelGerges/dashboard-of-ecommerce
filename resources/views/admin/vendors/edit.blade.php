@@ -50,8 +50,8 @@
 
                                              <input type="hidden" name="id" value="{{$vendor -> id}}">
 
-{{--                                            <input type="hidden"  value="{{$vendor -> latitude}}" id="latitude" name="latitude">--}}
-{{--                                            <input type="hidden" value="{{$vendor -> longitude}}" id="longitude"  name="longitude">--}}
+                                            <input type="hidden"  value="{{$vendor -> latitude}}" id="latitude" name="latitude">
+                                            <input type="hidden" value="{{$vendor -> longitude}}" id="longitude"  name="longitude">
 
                                             <div class="form-group">
                                                 <div class="text-center">
@@ -165,7 +165,7 @@
                                                 </div>
 
 
-                                                <di class="row">
+                                                <div class="row">
                                                     <div class="col-md-6 ">
                                                         <div class="form-group">
                                                             <label for="projectinput1"> العنوان  </label>
@@ -181,7 +181,7 @@
                                                         </div>
                                                     </div>
 
-                                                </di>
+                                                </div>
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group mt-1">
